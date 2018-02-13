@@ -59,16 +59,16 @@ export default class Home extends Component {
 		var join = this.state.done.slice();
 		join.push(name);
 		this.setState({
-    	done: join
-  	});
+			done: join
+		});
 		cookies.set('done', JSON.stringify(join), { path: '/'});
 	}
 	handleClick() {
 		if (this.state.task !== '') {
 			this.setState({
 				task: '',
-    		list: [...this.state.list, this.state.task]
-   		}, () => {
+				list: [...this.state.list, this.state.task]
+			}, () => {
 				const cookies = new Cookies();
 				cookies.set('todo', JSON.stringify(this.state.list), { path: '/'});
 				cookies.set('done', JSON.stringify(this.state.done), { path: '/'});
@@ -76,7 +76,7 @@ export default class Home extends Component {
 		}
 	}
 	handleKey = (event) => {
-  	if (event.key === 'Enter'){
+		if (event.key === 'Enter'){
 			this.handleClick();
 		}
 	}
