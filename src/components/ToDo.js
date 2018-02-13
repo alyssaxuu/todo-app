@@ -3,12 +3,12 @@ import { Check } from 'react-feather';
 import { X } from 'react-feather';
 import Emoji from 'react-emoji-render';
 
-class ToDo extends React.Component {
+export default class ToDo extends Component {
 	constructor(props) {
 		super(props);
 		this.handleChange = this.handleChange.bind(this);
 		this.handleDone = this.handleDone.bind(this);
-  	}
+  }
 	handleChange(name, type) {
 		this.props.remove(name, type);
 	}
@@ -16,7 +16,6 @@ class ToDo extends React.Component {
 		this.props.complete(name);
 	}
 	render() {
-		var passTarget = this;
 		const rlist = this.props.tasks.map((list) =>
 		<div key={list.toString()}>
 			<li className="todo">{list}</li>
@@ -32,11 +31,10 @@ class ToDo extends React.Component {
 		);
 		return (
 			<div>
-			<ul>{rlist}</ul>
-			{this.props.done.length ? <h1>Completed tasks <Emoji text="👏" /></h1> : ''}
-			<ul>{dlist}</ul>
+				<ul>{rlist}</ul>
+				{this.props.done.length ? <h1>Completed tasks <Emoji text="👏" /></h1> : ''}
+				<ul>{dlist}</ul>
 			</div>
-			);
+		);
 	}
 }
-export default ToDo;
