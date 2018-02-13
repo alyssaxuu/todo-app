@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ToDo from './components/ToDo';
+import ToDo, { TASK_STATUSES } from './components/ToDo';
 import './css/styles.css';
 import Emoji from 'react-emoji-render';
 
@@ -30,22 +30,28 @@ export default class Home extends Component {
 	}
 	removeTodo(name, type) {
 		let array, index;
-		if (type === 1) {
-			array = this.state.list;
-			index = array.indexOf(name);
-			array.splice(index, 1);
-			this.setState({ list: array });
-			localStorage.setItem('todo', JSON.stringify(array));
-		} else {
-			array = this.state.done;
-			index = array.indexOf(name);
-			array.splice(index, 1);
-			this.setState({ done: array });
-			localStorage.setItem('done', JSON.stringify(array));
+		switch (type) {
+			case TASK_STATUSES.TO_DO: {
+				array = this.state.list;
+				index = array.indexOf(name);
+				array.splice(index, 1);
+				this.setState({ list: array });
+				localStorage.setItem('todo', JSON.stringify(array));
+			} break;
+			case TASK_STATUSES.DONE: {
+				array = this.state.done;
+				index = array.indexOf(name);
+				array.splice(index, 1);
+				this.setState({ done: array });
+				localStorage.setItem('done', JSON.stringify(array));
+			} break;
+			default: {
+				// nothing
+			} break;
 		}
 	}
 	completeTodo(name) {
-		this.removeTodo(name, 1);
+		this.removeTodo(name, TASK_STATUSES.TO_DO);
 		var join = this.state.done.slice();
 		join.push(name);
 		this.setState({ done: join });
