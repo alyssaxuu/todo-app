@@ -32,7 +32,7 @@ export default (props) => {
 	return (
 		<div>
 			<ul>{rlist}</ul>
-			{props.done.length ? <h1>Completed tasks <Emoji text="👏" /></h1> : ''}
+			{props.done.length && <h1>Completed tasks <Emoji text="👏" /></h1>}
 			<ul>{dlist}</ul>
 		</div>
 	);
