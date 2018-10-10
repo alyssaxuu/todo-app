@@ -48,6 +48,7 @@ input {
 	-moz-box-sizing: border-box;
 	text-indent: 30px;
 	margin-bottom: 20px;
+	font-size: 16px;
 }
 ::placeholder {
 	color: #745680;
@@ -57,7 +58,7 @@ input:focus, button:focus {
 }
 button {
 	cursor: pointer;
-	position: absolute;
+	/* position: absolute; */
 	font-size: 20px;
 	height: 50px;
 	width: 50px;
@@ -74,24 +75,28 @@ button {
 }
 button:hover {
 	width: 70px;
+	border: solid 1.5px rgb(204, 121, 240);
+	background-color: rgb(204, 121, 240);
+	color: black;
 }
 p {
-	color: #FFF;
+	color: gray;
 	font-family: 'Roboto';
 	text-align: left;
-	font-size: 10px;
+	font-size: 14px;
 	opacity: 1;
 }
-.check, .cross {
+.check, .cross, .edit {
 	opacity: .5;
 	margin-bottom: -5px;
 	transition: opacity .3s cubic-bezier(.8,.03,.25,1);
 	cursor: pointer;
 }
-.check:hover, .cross:hover {
+.check:hover, .cross:hover, .edit:hover {
+	color: yellow;
 	opacity: 1;
 }
-.check {
+.check, .edit {
 	margin-right: 10px;
 }
 .done {

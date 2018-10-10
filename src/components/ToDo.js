@@ -1,6 +1,5 @@
 import React from 'react';
-import { Check } from 'react-feather';
-import { X } from 'react-feather';
+import { Check, Edit, X } from 'react-feather';
 import Emoji from 'react-emoji-render';
 
 export const TASK_STATUSES = {
@@ -15,9 +14,13 @@ export default (props) => {
 	const handleDone = (name) => {
 		props.complete(name);
 	};
+	const handleEdit = (name, index) => {
+		props.edit(name, index);
+	}
 	const rlist = props.tasks.map((list, idx) =>
 		<div key={idx}>
 			<li className="todo">{list}</li>
+			<Edit className="edit" color="white" size={17} onClick={() => handleEdit(list, idx)} />
 			<Check className="check" color="white" size={17} onClick={() => handleDone(list)} />
 			<X className="cross" color="white" size={17} onClick={() => handleChange(list, TASK_STATUSES.TO_DO)} />
 		</div>
