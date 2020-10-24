@@ -76,9 +76,10 @@ export default class Home extends Component {
 	render() {
 		return (
 			<div className="header">
-				<h1>My tasks<Emoji text="✍" /></h1>
-				<input placeholder="Ex: Write a new blog post" maxLength={80} value={this.state.task} type='text' onKeyPress={this.handleKey} task={this.state.task} onChange={this.onChange}/>
+				<input placeholder="Add a task" maxLength={80} value={this.state.task} type='text' onKeyPress={this.handleKey} task={this.state.task} onChange={this.onChange}/>
 				<button onClick={this.handleClick}>+</button>
+				<hr />
+				<h1>My tasks<Emoji text="✍" /></h1>
 				<ToDo tasks={this.state.list} done={this.state.done} remove={this.removeTodo} complete={this.completeTodo}/>
 			</div>
 		);
