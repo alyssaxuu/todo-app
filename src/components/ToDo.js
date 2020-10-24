@@ -2,6 +2,7 @@ import React from 'react';
 import { Check } from 'react-feather';
 import { X } from 'react-feather';
 import Emoji from 'react-emoji-render';
+import '../css/todo.css'
 
 export const TASK_STATUSES = {
 	TO_DO: 'TO_DO',
@@ -32,7 +33,8 @@ export default (props) => {
 	return (
 		<div>
 			<ul>{rlist}</ul>
-			{props.done.length && <h1>Completed tasks <Emoji text="👏" /></h1>}
+			<hr />
+			{props.done.length && <h1>Completed tasks <Emoji text="🎊" /></h1>}
 			<ul>{dlist}</ul>
 		</div>
 	);

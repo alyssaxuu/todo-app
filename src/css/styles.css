@@ -9,7 +9,7 @@ html {
 	padding-top: 100px;
 }
 body {
-	background: linear-gradient(180deg, #2F0045, #552660);
+	background: linear-gradient(180deg, #db1313, #e4195d);
 	background-attachment: fixed;
 	margin: 0px;
 	height: 100%!important;
@@ -17,12 +17,12 @@ body {
 h1 {
 	font-family: 'Roboto';
 	font-size: 25px;
-	color: #FFF;
+	color: grey;
 	margin-top: 0px!important;
 	margin-bottom: 30px;
 }
 li {
-	color: #FFF;
+	color: grey;
 	display: inline-block;
 	margin-right: 20px;
 	margin-bottom: 20px;
@@ -33,9 +33,17 @@ ul {
 	text-align: left;
 	padding: 0px;
 }
+
+hr {
+	height: 1px;
+    border: 0;
+    background-color: lightgray;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 input {
 	background-color: #380D4A;
-	border: solid 1.5px #4D1366;
+	border: solid 1.5px #b300ffe0;
 	height: 50px;
 	border-top-right-radius: 0px;
 	border-bottom-right-radius: 0px;
@@ -43,7 +51,7 @@ input {
 	border-bottom-left-radius: 5px;
 	width: 400px;
 	padding: 0px;
-	color: #FFF;
+	color: grey;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	text-indent: 30px;
@@ -65,18 +73,18 @@ button {
 	border-bottom-right-radius: 5px;
 	border-top-left-radius: 0px;
 	border-bottom-left-radius: 0px;
-	border: solid 1.5px #4D1366;
-	background-color: #4D1366;
+	border: solid 1.5px #b300ffe0;
+	background-color: #b300ffe0;
 	padding: 0px;
 	margin: 0px;
-	color: #FFF;
+	color: grey;
 	transition: all .3s cubic-bezier(.8,.03,.25,1);
 }
 button:hover {
 	width: 70px;
 }
 p {
-	color: #FFF;
+	color: grey;
 	font-family: 'Roboto';
 	text-align: left;
 	font-size: 10px;
